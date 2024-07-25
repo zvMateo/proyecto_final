@@ -6,6 +6,7 @@ from typing import List
 from sqlalchemy.orm import Session
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+from sqlalchemy import func
 
 
 Base.metadata.create_all(bind=engine)
@@ -28,9 +29,9 @@ class LoginRequest(BaseModel):
 
 @app.post("/api/login/")
 def login(login_request: LoginRequest, db: Session = Depends(get_db)):
-    email = login_request.email
+    normalized_email = login_request.email.lower()
     contraseña = login_request.contraseña
-    user = db.query(UserModel).filter(UserModel.email == email).first()
+    user = db.query(UserModel).filter(func.lower(UserModel.email) == normalized_email).first()
     if user is None or not user.check_password(contraseña):
         raise HTTPException(status_code=401, detail="Credenciales incorrectas")
     return user
@@ -48,7 +49,8 @@ async def read_all_user(db=Depends(get_db)):
 # Ruta para crear un nuevo usuario
 @app.post("/api/users/", response_model=User)
 def create_user(user: CreateUser, db: Session = Depends(get_db)):
-    db_user = UserModel(email=user.email, nombre=user.nombre)
+    normalized_email = user.email.lower()
+    db_user = UserModel(email=normalized_email, password=user.password)
     db_user.set_password(user.contraseña)
     db.add(db_user)
     db.commit()
