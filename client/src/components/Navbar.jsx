@@ -4,8 +4,9 @@ import { useAuth } from "../contexts/AuthContext";
 
 export default function Navbar() {
   const { authState, logout } = useAuth();
+
   return (
-    <div className="navbar bg-base-100">
+    <nav className="navbar bg-navbar-color/60 shadow-lg rounded-2xl ">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -26,11 +27,11 @@ export default function Navbar() {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+            className="menu menu-sm dropdown-content rounded-box z-[1] mt-3 w-52 p-2 shadow"
           >
           </ul>
         </div>
-        <Link className="btn btn-ghost text-xl">
+        <Link to="/" className="text-navbar-color border-0 btn btn-ghost text-xl">
           <img src={logo} alt="Logo" className="h-8 mr-2" />
           Partenón
         </Link>
@@ -42,14 +43,14 @@ export default function Navbar() {
       <div className="navbar-end">
         {authState.isAuthenticated ? 
           <div>
-            <Link to={'/protected/books'} className="btn btn-ghost">Mis Libros</Link>
-            <Link to={'/'} onClick={logout} className="btn btn-ghost">Cerrar sesión</Link>
+            <Link to="/protected/books" className="text-[#E0E1DD] btn btn-ghost">Mis Libros</Link>
+            <Link to="/" onClick={logout} className="text-[#E0E1DD] btn btn-ghost">Cerrar sesión</Link>
           </div> : (
-          <Link to={"/login"} className="btn btn-ghost">
+          <Link to="/login" className="text-[#E0E1DD] btn btn-ghost">
             Login
           </Link>
         )}
       </div>
-    </div>
+    </nav>
   );
 }

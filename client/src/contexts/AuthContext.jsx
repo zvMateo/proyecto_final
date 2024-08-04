@@ -1,8 +1,9 @@
-// src/contexts/AuthContext.jsx
 import { createContext, useState, useContext } from "react";
 import axios from "axios";
 
 const AuthContext = createContext();
+
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 export const AuthProvider = ({ children }) => {
   const [authState, setAuthState] = useState({
@@ -12,7 +13,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (email, contraseña) => {
     try {
-      const response = await axios.post("http://127.0.0.1:8000/api/login/", {
+      const response = await axios.post(`${API_BASE_URL}/login/`, {
         email,
         contraseña,
       });

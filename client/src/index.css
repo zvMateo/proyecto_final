@@ -2,18 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
-/* src/index.css */
-@font-face {
-    font-family: 'BodoniFLF';
-    src: url('./assets/BodoniFLF-Bold.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
+/* styles.css */
+.text-gradient {
+  background: linear-gradient(
+    90deg,
+    #0D1B2A 20%,
+    #1B263B 35%,
+    #778DA9 70%,
+    /* #778DA9 80%, */
+    #E0E1DD 1000%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
-  
-@font-face {
-    font-family: 'BodoniFLF';
-    src: url('./assets/BodoniFLF-Roman.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-  }
-  
+
+.bg-gradient {
+  background: -webkit-linear-gradient(
+    90deg,
+    #edf2f4,
+    #415a77,
+    #0d1b2a
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    90deg,
+    #edf2f4,
+    #415a77,
+    #0d1b2a
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}

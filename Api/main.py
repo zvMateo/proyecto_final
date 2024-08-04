@@ -27,6 +27,10 @@ class LoginRequest(BaseModel):
     email: str
     contraseña: str
 
+@app.get("/")
+def read_root():
+    return {"Hello": "World"}
+
 @app.post("/api/login/")
 def login(login_request: LoginRequest, db: Session = Depends(get_db)):
     normalized_email = login_request.email.lower()
