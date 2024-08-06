@@ -8,7 +8,6 @@ Este proyecto es una aplicación web para la gestión de libros que permite a lo
 - [Instalación](#instalación)
 - [Uso](#uso)
 - [Contribución](#contribución)
-- [Licencia](#licencia)
 
 ## Características
 
@@ -45,7 +44,7 @@ Este proyecto es una aplicación web para la gestión de libros que permite a lo
 3. Crea un archivo `.env` en el directorio `client` con las variables de entorno necesarias:
 
     ```env
-    REACT_APP_API_URL=http://localhost:8000
+    VITE_API_BASE_URL=http://127.0.0.1:8000/api
     ```
 
 4. Inicia la aplicación:
@@ -78,7 +77,7 @@ Este proyecto es una aplicación web para la gestión de libros que permite a lo
 4. Configura la base de datos PostgreSQL y ajusta el archivo `.env` con las variables de entorno necesarias:
 
     ```env
-    DATABASE_URL=postgresql://usuario:contraseña@localhost:5432/nombre-de-la-base-de-datos
+    DATABASE_URL=postgresql://postgres:password123@localhost/trabajo_final
     ```
 
 5. Inicia el servidor:
@@ -89,8 +88,8 @@ Este proyecto es una aplicación web para la gestión de libros que permite a lo
 
 ## Uso
 
-1. Navega a `http://localhost:3000` en tu navegador.
-2. Regístrate o inicia sesión.
+1. Navega a `http://localhost:5173/` en tu navegador.
+2. Inicia sesión con las cuentas = "mateo@example.com" o "joa@example.com" y las contraseñas son = "mateo123" y "joa123"
 3. Agrega, edita o elimina libros según sea necesario.
 
 ## Contribución
@@ -100,7 +99,3 @@ Este proyecto es una aplicación web para la gestión de libros que permite a lo
 3. Realiza tus cambios y haz commit (`git commit -m 'Agrega nueva característica'`).
 4. Sube tus cambios (`git push origin feature/nueva-caracteristica`).
 5. Abre un Pull Request.
-
-## Licencia
-
-Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más detalles.
