@@ -2,12 +2,6 @@
 
 Este proyecto es una aplicación web para la gestión de libros que permite a los usuarios autenticarse, agregar, editar y eliminar libros. El frontend está desarrollado con React.js y el backend con FastAPI y PostgreSQL.
 
-## Video de introduccion
-<video width="600" controls>
-  <source src="/video/Proyecto final UBP .mp4" type="video/mp4">
-  Tu navegador no soporta el elemento de video.
-</video>
-
 
 ## Tabla de Contenidos
 
