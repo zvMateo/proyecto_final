@@ -78,7 +78,7 @@ Este proyecto es una aplicación web para la gestión de libros que permite a lo
 4. Configura la base de datos PostgreSQL y ajusta el archivo `.env` con las variables de entorno necesarias:
 
     ```env
-    DATABASE_URL=postgresql://postgres:password123@localhost/trabajo_final
+    DATABASE_URL=postgresql://[ingrese_aqui_su_usuario]:[su_contraseña]@localhost/[nombre_de_la_base_de_datos]
     ```
 
 5. Inicia el servidor:
