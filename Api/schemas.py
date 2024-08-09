@@ -23,9 +23,6 @@ class Book(CreateBook):
     class Config:
         from_attributes=True
 
-# class BookUser(BaseModel):
-#     nombre: str
-#     descripcion: str
 
 
 class UpdateBook(BaseModel):

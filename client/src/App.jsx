@@ -1,6 +1,6 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import Navbar from "./components/Navbar"; // Importa tu componente Navbar
+import Navbar from "./components/Navbar"; 
 
 
 
